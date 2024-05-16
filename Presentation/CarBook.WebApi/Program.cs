@@ -10,6 +10,8 @@ using CarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CarBook.Application.Features.CQRS.Handlers.ContactHandlers;
 using CarBook.Persistence.Repositories;
 using CarBook.Application.Services;
+using CarBook.Application.Interfaces.BlogInterfaces;
+using CarBook.Persistence.Repositories.BlogRepositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -64,6 +66,7 @@ builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
+builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
 
 builder.Services.AddDbContext<CarBookContext>();
 
