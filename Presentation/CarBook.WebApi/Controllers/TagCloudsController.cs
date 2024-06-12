@@ -1,5 +1,6 @@
 ﻿using CarBook.Application.Features.Mediator.Commands.TagCloudCommands;
 using CarBook.Application.Features.Mediator.Queries.TagCloudQueries;
+using CarBook.Application.Features.Mediator.Results.TagCloudResults;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,6 +45,12 @@ namespace CarBook.WebApi.Controllers
             await _mediator.Send(command);
             return Ok("Etiket Bulutu başarıyla güncellendi");
         }
+        [HttpGet("GetTagCloudsByBlogId/{id}")]
+        public async Task<IActionResult> GetTagCloudsByBlogId(int id)
+        {
+            var values = await _mediator.Send(new GetTagCloudByBlogIdQuery(id));
+            return Ok(values);
+        }
     }
 }
-}
+
