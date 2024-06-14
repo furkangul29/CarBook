@@ -1,5 +1,6 @@
 ﻿using CarBook.Application.Features.ReposityoryPattern.CommentRepositories;
 using CarBook.Domain.Entities;
+using CarBook.Persistence.Repositories.CommentRepositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,8 +47,12 @@ namespace CarBook.WebApi.Controllers
             var comment = _commentRepository.GetById(id);
             return Ok(comment);
         }
-    
+        [HttpGet("CommentListByBlog/{id}")]
+        public IActionResult CommentListByBlog(int id)
+        {
+            var value = _commentRepository.GetCommentsByBlogId(id);
+            return Ok(value);
+        }
 
-        
     }
 }

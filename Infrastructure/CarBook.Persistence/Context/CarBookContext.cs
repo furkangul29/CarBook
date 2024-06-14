@@ -13,7 +13,8 @@ namespace CarBook.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=CarBook;Trusted_Connection=True;integrated Security=true;TrustServerCertificate=true;");
+            //optionsBuilder.UseSqlServer("Server=.;Database=CarBook;Trusted_Connection=True;integrated Security=true;TrustServerCertificate=true;");
+            optionsBuilder.UseSqlServer("Server=carbookdb.cpmew0w400zv.eu-north-1.rds.amazonaws.com,1433;Database=CarBook;User Id=admin;Password=330457Fg;TrustServerCertificate=true;");
         }
 
         public DbSet<About> Abouts { get; set; }

@@ -7,14 +7,176 @@
 <script src="~/Admin/vertical/assets/js/metismenu.min.js"></script>
 <script src="~/Admin/vertical/assets/js/waves.js"></script>
 <script src="~/Admin/vertical/assets/js/simplebar.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    function confirmDelete(carID) {
+    function deleteCarConfirm(carID) {
         var result = confirm("Bu aracı silmek istediğinize emin misiniz?");
         if (result) {
             window.location.href = "/AdminCar/RemoveCar/" + carID;
         }
     }
 </script>
+
+<script>
+    function deleteFeatureConfirm(featureID) {
+        var result = confirm("Bu özelliği silmek istediğinize emin misiniz?");
+        if (result) {
+            window.location.href = "/AdminFeature/RemoveFeature/" + featureID;
+        }
+    }
+</script>
+<script>
+    function deleteBrandConfirm(brandID) {
+        var result = confirm("Bu Markayı silmek istediğinize emin misiniz?");
+        if (result) {
+            window.location.href = "/AdminBrand/RemoveBrand/" + brandID;
+        }
+    }
+</script>
+
+<script>
+    function deleteBannerConfirm(bannerID) {
+        var result = confirm("Bu Bilgiyi silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminBanner/RemoveBanner/" + bannerID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminBanner/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+
+</script>
+<script>
+    function deleteAboutConfirm(aboutID) {
+        var result = confirm("Hakkımda kısmını silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminAbout/RemoveAbout/" + aboutID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminAbout/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+
+</script>
+<script>
+    function deleteAuthorConfirm(authorID) {
+        var result = confirm("Yazar bilgisini silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminAuthor/RemoveAuthor/" + authorID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminAuthor/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+
+</script>
+<script>
+    function deleteCategoryConfirm(authorID) {
+        var result = confirm("Bu kategoriyi silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminCategory/RemoveCategory/" + authorID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminCategory/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+</script>
+
+<script>
+    function deleteBlogConfirm(blogID) {
+        var result = confirm("Bu blogu silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminBlog/RemoveBlog/" + blogID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminBlog/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+</script>
+
+<script>
+    function deletePricingConfirm(pricingID) {
+        var result = confirm("Bu ödeme türünü silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminPricing/RemovePricing/" + pricingID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminPricing/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+</script>
+<script>
+    function deleteFooterAddressConfirm(footerAddressID) {
+        var result = confirm("Bu Footer adresi silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminFooterAddress/RemoveFooterAddress/" + footerAddressID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminFooterAddress/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+    </script>
+<script>
+    function deleteLocationConfirm(LocationID) {
+        var result = confirm("Bu Footer adresi silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminLocation/RemoveLocation/" + LocationID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminLocation/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+</script>
+
+
 
 <!-- App js -->
 <script src="~/Admin/vertical/assets/js/theme.js"></script>

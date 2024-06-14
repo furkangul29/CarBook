@@ -33,7 +33,7 @@ namespace CarBook.WebUI.Controllers
             createContactDto.SendDate = DateTime.Now;
             var jsonData = JsonConvert.SerializeObject(createContactDto);
             var stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7292/api/Contacts/Contacts", stringContent);
+            var responseMessage = await client.PostAsync("https://localhost:7292/api/Contacts", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index","Default");

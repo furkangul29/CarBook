@@ -13,6 +13,7 @@ namespace CarBook.Application.Features.ReposityoryPattern.CommentRepositories
         void Add(T entity);
         void Update(T entity);
         void Remove(int id);
+        List<T> GetCommentsByBlogId(int id);
 
     }
 }

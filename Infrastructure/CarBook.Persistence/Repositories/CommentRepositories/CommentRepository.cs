@@ -44,6 +44,12 @@ namespace CarBook.Persistence.Repositories.CommentRepositories
             return values;
         }
 
+        public List<Comment> GetCommentsByBlogId(int id)
+        {
+            var values= _context.Set<Comment>().Where(x=>x.BlogID==id).ToList();
+            return values;
+        }
+
         public void Remove(int id)
         {
             int commentId = id;

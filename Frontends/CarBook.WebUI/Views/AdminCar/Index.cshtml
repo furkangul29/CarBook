@@ -44,7 +44,7 @@
                                             <td>@item.Transmission</td>
                                             <td>@item.Km</td>
                                             <td>
-                                                <button onclick="confirmDelete('@item.CarID')" class="btn btn-outline-danger">Sil</button>
+                                                <button onclick="deleteCarConfirm('@item.CarID')" class="btn btn-outline-danger">Sil</button>
                                             </td>
                                             <td><a href="/AdminCar/UpdateCar/@item.CarID" class="btn btn-outline-success">Güncelle</a></td>
                                             <td><a href="/Admin/AdminCarFeatureDetail/Index/@item.CarID" class="btn btn-outline-dark">Detaylar</a></td>
