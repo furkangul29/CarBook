@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Text;
 using CarBook.Dto.AuthorDtos;
 
-namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
+namespace CarBook.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminAuthor")]

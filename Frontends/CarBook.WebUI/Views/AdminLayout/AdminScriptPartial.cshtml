@@ -175,6 +175,57 @@
         }
     }
 </script>
+<script>
+    function deleteServiceConfirm(serviceID) {
+        var result = confirm("Bu hizmeti silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminService/RemoveService/" + serviceID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminService/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+    </script>
+    <script>
+        function deleteSocialMediaConfirm(socialMediaID) {
+        var result = confirm("Bu sosyal medya hesabını silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminSocialMedia/RemoveSocialMedia/" + socialMediaID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminSocialMedia/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+    </script>
+    <script>
+        function deleteTestimonialConfirm(testimonialID) {
+        var result = confirm("Bu referansı silmek istediğinize emin misiniz?");
+        if (result) {
+            $.ajax({
+                url: "/Admin/AdminTestimonial/RemoveTestimonial/" + testimonialID,
+                type: 'DELETE',
+                success: function () {
+                    window.location.href = "/Admin/AdminTestimonial/Index";
+                },
+                error: function (err) {
+                    alert('Error: ' + err.responseText);
+                }
+            });
+        }
+    }
+    </script>
 
 
 

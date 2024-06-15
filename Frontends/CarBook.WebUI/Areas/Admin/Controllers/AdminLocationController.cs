@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using CarBook.Dto.LocationDtos;
 
-namespace UdemyCarBook.WebUI.Areas.Admin.Controllers
+namespace CarBook.WebUI.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
